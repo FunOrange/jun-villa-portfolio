@@ -12,15 +12,9 @@ import { useMediaQuery } from '@mui/material'
 const Page: NextPage = () => {
   const theme = useTheme()
   const upmd = useMediaQuery(theme.breakpoints.up('md'))
+  // TODO: add icons for technologies and languages
   return (
-    <Box
-      width='100%'
-      minHeight='calc(100vh - 2 * 24px)'
-      display='flex'
-      justifyContent='center'
-      alignItems='center'
-      bgcolor='#dbdbdb'
-    >
+    <Box width='100%' minHeight='calc(100vh - 2 * 24px)' display='flex' justifyContent='center' alignItems='center'>
       <S.Grid
         width={{ xs: '300px', sm: '560px', md: '800px', xl: '1200px' }}
         gridTemplateColumns={{
@@ -37,6 +31,9 @@ const Page: NextPage = () => {
         >
           <Typography fontSize='16px' color='#444' mb='5px'>
             Website + desktop app for finding osu! songs.
+          </Typography>
+          <Typography fontSize='16px' color='#5383ca' flexGrow='1'>
+            ・React + Node.js/Express + Firestore
           </Typography>
           <Box display='flex'>
             <Typography fontSize='16px' color='#5383ca' flexGrow='1'>
@@ -125,9 +122,5 @@ const S = {
   Grid: styled(Box)`
     display: grid;
     gap: 40px;
-  `,
-  Thumbnail: styled(Box)`
-    background-color: #eee;
-    width: 100%;
   `,
 }

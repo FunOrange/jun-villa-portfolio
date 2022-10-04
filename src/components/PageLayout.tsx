@@ -5,11 +5,17 @@ import { Drawer } from '@mui/material'
 import { ReactNode } from 'react'
 import { useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function PageLayout({ children }: { children: ReactNode }) {
   const theme = useTheme()
   const uplg = useMediaQuery(theme.breakpoints.up('lg'))
   const drawerWidth = uplg ? 240 : 0
+  const router = useRouter()
+  const onPortfolioPage = router.pathname === '/'
+  const onAboutMePage = router.pathname === '/about'
+  const onContactPage = router.pathname === '/contact'
   // TODO: add navbar on viewport sizes: xs, sm, md
   return (
     <>
@@ -34,15 +40,21 @@ export default function PageLayout({ children }: { children: ReactNode }) {
             Jun Villa
           </Typography>
           <Box display='flex' flexDirection='column' gap='18px'>
-            <S.SidebarLink component='a' href='#'>
-              portfolio
-            </S.SidebarLink>
-            <S.SidebarLink component='a' href='#'>
-              about me
-            </S.SidebarLink>
-            <S.SidebarLink component='a' href='#'>
-              contact
-            </S.SidebarLink>
+            <Link href={onPortfolioPage ? '#' : '/'} passHref>
+              <S.SidebarLink component='a' $active={onPortfolioPage}>
+                portfolio
+              </S.SidebarLink>
+            </Link>
+            <Link href={onAboutMePage ? '#' : '/about'} passHref>
+              <S.SidebarLink component='a' $active={onAboutMePage}>
+                about me
+              </S.SidebarLink>
+            </Link>
+            <Link href={onContactPage ? '#' : '/contact'} passHref>
+              <S.SidebarLink component='a' $active={onContactPage}>
+                contact
+              </S.SidebarLink>
+            </Link>
           </Box>
         </Box>
       </Drawer>
@@ -74,15 +86,15 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
 }))
 
 const S = {
-  SidebarLink: styled(Typography)`
+  SidebarLink: styled(Typography)<{ $active?: boolean }>`
     font-size: 22px;
     font-weight: 500;
     text-decoration: none;
 
     transition: color 0.1s;
-    color: #999;
+    color: ${({ $active }) => ($active ? '#5383ca' : '#999')};
     &:hover {
-      color: #000;
+      color: #5383ca;
     }
   `,
 }
