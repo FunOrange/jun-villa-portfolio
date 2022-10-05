@@ -9,6 +9,9 @@ const theme = createTheme({
         root: {
           textTransform: 'none',
           borderRadius: '0',
+          [':hover']: {
+            color: '#fff',
+          },
         },
       },
     },

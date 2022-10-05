@@ -13,6 +13,7 @@ export default function OsuCollectorModal({ ...transitionModalProps }: OsuCollec
   const imgScale = 0.85
   const imgWidth = 1280 * imgScale
   const imgHeight = 720 * imgScale
+
   return (
     <TransitionModal {...transitionModalProps}>
       <Box display='flex' justifyContent='space-between' mb='14px'>
@@ -27,15 +28,18 @@ export default function OsuCollectorModal({ ...transitionModalProps }: OsuCollec
           </Box>
           <Box>
             <Box display='flex' alignItems='center' gap='4px' mb='2px'>
-              <S.Button variant='contained' endIcon={<OpenInNew />} href='https://osucollector.com'>
-                Website
-              </S.Button>
-              <Button variant='contained' endIcon={<Code />}>
+              {
+                // @ts-ignore:next-line
+                <Button variant='contained' endIcon={<OpenInNew />} href='https://osucollector.com' target='_blank'>
+                  Website
+                </Button>
+              }
+              <Button variant='contained' endIcon={<Code />} disabled>
                 Code*
               </Button>
             </Box>
             <Typography fontSize='14px' color='#888'>
-              *Commercial product; only frontend is open source.
+              *Commercial product; not open source.
             </Typography>
           </Box>
         </Box>
@@ -88,9 +92,12 @@ export default function OsuCollectorModal({ ...transitionModalProps }: OsuCollec
           <Carousel.Caption>
             <h3>Share song playlists</h3>
             <p>
-              This website is for the rhythm game <a href='https://osu.ppy.sh'>osu!</a>. Users can log into the site
-              using their existing osu! account (OAuth2), and upload song playlists (called collections) for others to
-              view and download.
+              This website is for the rhythm game{' '}
+              <a href='https://osu.ppy.sh' target='_blank'>
+                osu!
+              </a>
+              . Users can log into the site using their existing osu! account (OAuth2), and upload song playlists
+              (called collections) for others to view and download. Users can also like and comment on collections.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -114,7 +121,7 @@ export default function OsuCollectorModal({ ...transitionModalProps }: OsuCollec
               osu!Collector supports Twitch subscription, credit card (Stripe), and PayPal as methods of payment.
               <br />
               Users with an Amazon Prime subscription are entitled to a{' '}
-              <a href='https://help.twitch.tv/s/article/how-to-subscribe?language=en_US#Prime'>
+              <a href='https://help.twitch.tv/s/article/how-to-subscribe?language=en_US#Prime' target='_blank'>
                 free Twitch subscription every month
               </a>
               , allowing users to gain a paid subscription at no additional cost.
@@ -124,12 +131,4 @@ export default function OsuCollectorModal({ ...transitionModalProps }: OsuCollec
       </Carousel>
     </TransitionModal>
   )
-}
-
-const S = {
-  Button: styled(Button)`
-    &:hover {
-      color: #fff;
-    }
-  `,
 }

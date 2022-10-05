@@ -9,6 +9,7 @@ import { styled } from '@mui/system'
 import { useTheme } from '@mui/material'
 import { useMediaQuery } from '@mui/material'
 import OsuCollectorModal from 'components/modals/OsuCollectorModal'
+import OsuTrainerModal from 'components/modals/OsuTrainerModal'
 
 enum Work {
   OsuCollector,
@@ -117,13 +118,13 @@ const Page: NextPage = () => {
             subtitle='2019-2022 project'
             imageSrc=''
           >
-            <Typography fontSize='16px' color='#444' mb='5px'></Typography>
-            <Box display='flex'>
-              <Typography fontSize='16px' color='#444' flexGrow='1'>
-                Two button mechanical keyboards. <br />
-                Windows app configures settings.
-              </Typography>
-            </Box>
+            <Typography fontSize='16px' color='#444' mb='5px'>
+              Two button mechanical keyboards. <br />
+              Windows app configures settings.
+            </Typography>
+            <Typography fontSize='16px' color='#5383ca' flexGrow='1'>
+              ・40 units sold
+            </Typography>
           </ProjectCard>
           <ProjectCard
             boxProps={{ onClick: () => setSelectedWork(Work.Marvell) }}
@@ -143,6 +144,7 @@ const Page: NextPage = () => {
       </Box>
 
       <OsuCollectorModal open={selectedWork === Work.OsuCollector} handleClose={() => setSelectedWork(undefined)} />
+      <OsuTrainerModal open={selectedWork === Work.OsuTrainer} handleClose={() => setSelectedWork(undefined)} />
     </>
   )
 }

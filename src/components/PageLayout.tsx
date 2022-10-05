@@ -11,10 +11,11 @@ import { useRouter } from 'next/router'
 export default function PageLayout({ children }: { children: ReactNode }) {
   const theme = useTheme()
   const uplg = useMediaQuery(theme.breakpoints.up('lg'))
-  const drawerWidth = uplg ? 240 : 0
+  const drawerWidth = uplg ? 220 : 0
   const router = useRouter()
   const onPortfolioPage = router.pathname === '/'
   const onAboutMePage = router.pathname === '/about'
+  const onResumePage = router.pathname === '/resume'
   const onContactPage = router.pathname === '/contact'
   // TODO: add navbar on viewport sizes: xs, sm, md
   return (
@@ -58,6 +59,11 @@ export default function PageLayout({ children }: { children: ReactNode }) {
             <Link href={onAboutMePage ? '#' : '/about'} passHref>
               <S.SidebarLink as='a' $active={onAboutMePage}>
                 about me
+              </S.SidebarLink>
+            </Link>
+            <Link href={onResumePage ? '#' : '/resume'} passHref>
+              <S.SidebarLink as='a' $active={onResumePage}>
+                resume
               </S.SidebarLink>
             </Link>
             <Link href={onContactPage ? '#' : '/contact'} passHref>
