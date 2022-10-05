@@ -30,35 +30,45 @@ export default function PageLayout({ children }: { children: ReactNode }) {
             width: drawerWidth,
             boxSizing: 'border-box',
             borderRight: 'none',
-            boxShadow: 'rgb(149 157 165 / 20%) 0px 8px 24px',
+            boxShadow: 'rgb(149 157 165 / 70%) 0px 8px 24px',
           },
         }}
       >
         <Box height='100%' display='flex' justifyContent='center' flexDirection='column' pl='36px'>
-          <Typography component='h1' fontSize='32px' fontWeight='500' mb='40px'>
-            {/* TODO: replace with signature */}
-            Jun Villa
-          </Typography>
+          <Box mb='40px'>
+            <Typography
+              component='h1'
+              fontFamily='"Dancing Script", cursive'
+              fontSize='40px'
+              fontWeight='700'
+              mb='-8px'
+            >
+              Jun Villa
+            </Typography>
+            <Typography fontSize='17px' fontWeight='400' color='#999'>
+              software engineer
+            </Typography>
+          </Box>
           <Box display='flex' flexDirection='column' gap='18px'>
             <Link href={onPortfolioPage ? '#' : '/'} passHref>
-              <S.SidebarLink component='a' $active={onPortfolioPage}>
+              <S.SidebarLink as='a' $active={onPortfolioPage}>
                 portfolio
               </S.SidebarLink>
             </Link>
             <Link href={onAboutMePage ? '#' : '/about'} passHref>
-              <S.SidebarLink component='a' $active={onAboutMePage}>
+              <S.SidebarLink as='a' $active={onAboutMePage}>
                 about me
               </S.SidebarLink>
             </Link>
             <Link href={onContactPage ? '#' : '/contact'} passHref>
-              <S.SidebarLink component='a' $active={onContactPage}>
+              <S.SidebarLink as='a' $active={onContactPage}>
                 contact
               </S.SidebarLink>
             </Link>
           </Box>
         </Box>
       </Drawer>
-      <Main open={true} drawerWidth={drawerWidth}>
+      <Main open={true} drawerWidth={drawerWidth} style={{ background: '#cbcbcb' }}>
         {children}
       </Main>
     </>
@@ -92,9 +102,11 @@ const S = {
     text-decoration: none;
 
     transition: color 0.1s;
-    color: ${({ $active }) => ($active ? '#5383ca' : '#999')};
+    transition: padding 0.2s;
+    color: ${({ $active }) => ($active ? '#0056d8' : '#999')};
     &:hover {
-      color: #5383ca;
+      color: #0056d8;
+      padding-left: 8px;
     }
   `,
 }

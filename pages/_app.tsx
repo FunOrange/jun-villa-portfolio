@@ -6,6 +6,9 @@ import CssBaseline from '@mui/material/CssBaseline'
 import theme from 'theme'
 import PageLayout from 'components/PageLayout'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'global.css'
+
 interface MyAppProps extends AppProps {}
 export default function MyApp(props: MyAppProps) {
   const { Component, pageProps } = props
