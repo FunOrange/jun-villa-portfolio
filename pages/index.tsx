@@ -10,6 +10,7 @@ import { useTheme } from '@mui/material'
 import { useMediaQuery } from '@mui/material'
 import OsuCollectorModal from 'components/modals/OsuCollectorModal'
 import OsuTrainerModal from 'components/modals/OsuTrainerModal'
+import AuctoModal from 'components/modals/AuctoModal'
 
 enum Work {
   OsuCollector,
@@ -42,7 +43,7 @@ const Page: NextPage = () => {
             boxProps={{ gridColumn: upmd ? '1 / span 2' : '1', onClick: () => setSelectedWork(Work.OsuCollector) }}
             title='osu!Collector'
             subtitle='2021-2022 project'
-            imageSrc=''
+            imageSrc='/osu-collector.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               Website + desktop app for finding and downloading osu! songs. <br />
@@ -58,7 +59,7 @@ const Page: NextPage = () => {
             boxProps={{ onClick: () => setSelectedWork(Work.OsuTrainer) }}
             title='osu! trainer'
             subtitle='2020 project'
-            imageSrc=''
+            imageSrc='/osu-trainer.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               Windows app for changing the difficulty of osu! songs.
@@ -73,7 +74,7 @@ const Page: NextPage = () => {
             boxProps={{ onClick: () => setSelectedWork(Work.Aucto) }}
             title='Aucto'
             subtitle='2022 work experience'
-            imageSrc=''
+            imageSrc='/aucto.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               Front-end web developer position
@@ -86,7 +87,7 @@ const Page: NextPage = () => {
             boxProps={{ onClick: () => setSelectedWork(Work.Aerlift) }}
             title='Aerlift'
             subtitle='2021 work experience'
-            imageSrc=''
+            imageSrc='/aerlift.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               Communications engineer position
@@ -101,7 +102,7 @@ const Page: NextPage = () => {
             boxProps={{ onClick: () => setSelectedWork(Work.OsuPrinter) }}
             title='3D printer plays osu!'
             subtitle='2021 project'
-            imageSrc=''
+            imageSrc='/3d-printer.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               YouTube video sponsored by Gaomon
@@ -116,7 +117,7 @@ const Page: NextPage = () => {
             boxProps={{ onClick: () => setSelectedWork(Work.OsuKeypads) }}
             title='osu! keypads'
             subtitle='2019-2022 project'
-            imageSrc=''
+            imageSrc='/keypads.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               Two button mechanical keyboards. <br />
@@ -130,7 +131,7 @@ const Page: NextPage = () => {
             boxProps={{ onClick: () => setSelectedWork(Work.Marvell) }}
             title='Marvell'
             subtitle='2019-2020 work experience'
-            imageSrc=''
+            imageSrc='/marvell.jpg'
           >
             <Typography fontSize='16px' color='#444' mb='5px'>
               Digital verification engineer position
@@ -145,6 +146,7 @@ const Page: NextPage = () => {
 
       <OsuCollectorModal open={selectedWork === Work.OsuCollector} handleClose={() => setSelectedWork(undefined)} />
       <OsuTrainerModal open={selectedWork === Work.OsuTrainer} handleClose={() => setSelectedWork(undefined)} />
+      <AuctoModal open={selectedWork === Work.Aucto} handleClose={() => setSelectedWork(undefined)} />
     </>
   )
 }

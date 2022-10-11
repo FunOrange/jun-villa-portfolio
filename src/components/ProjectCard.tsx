@@ -3,11 +3,12 @@ import { BoxProps } from '@mui/system'
 import { styled } from '@mui/system'
 import { Box } from '@mui/system'
 import { ReactNode } from 'react'
+import Image from 'next/image'
 
 export interface ProjectCardProps {
   title: string
   subtitle: string
-  imageSrc?: string
+  imageSrc: string
   children?: ReactNode
   boxProps?: BoxProps
 }
@@ -22,7 +23,9 @@ export default function ProjectCard({ title, subtitle, imageSrc, boxProps = {}, 
         {subtitle}
       </Typography>
       <Box mt='10px' mb='20px'>
-        <S.Thumbnail />
+        <S.Thumbnail>
+          <Image src={imageSrc} layout='fill' />
+        </S.Thumbnail>
       </Box>
       {children}
     </S.Card>
@@ -44,6 +47,7 @@ const S = {
     }
   `,
   Thumbnail: styled(Box)`
+    position: relative;
     background-color: #eee;
     width: 100%;
     height: 260px;
