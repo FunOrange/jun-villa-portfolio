@@ -11,10 +11,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
+  bgcolor: '#eee',
   borderRadius: '5px',
   boxShadow: 'rgb(0 0 0 / 25%) 0px 8px 12px',
-  padding: 4,
 }
 
 export interface TransitionModalProps {

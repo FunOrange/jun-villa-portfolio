@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
 import OpenInNew from '@mui/icons-material/OpenInNew'
 import Code from '@mui/icons-material/Code'
-import Carousel from 'react-bootstrap/Carousel'
+// import Carousel from 'react-bootstrap/Carousel'
 import { styled } from '@mui/system'
 
 export interface AuctoModalProps extends Omit<TransitionModalProps, 'children'> {}
@@ -53,7 +53,7 @@ export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps)
         </p>
       </Typography>
 
-      <Carousel interval={null} wrap={false}>
+      {/* <Carousel interval={null} wrap={false}>
         <Carousel.Item>
           <Box width={`${imgWidth}px`} height={`${imgHeight}px`} bgcolor='#333'></Box>
           <Carousel.Caption>
@@ -78,7 +78,7 @@ export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps)
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
+      </Carousel> */}
     </TransitionModal>
   )
 }
