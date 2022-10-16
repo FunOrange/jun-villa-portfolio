@@ -40,10 +40,6 @@ export default function OsuTrainerModal({ ...transitionModalProps }: OsuTrainerM
       ),
     },
   ]
-  // built with:
-  // <Chip label='C#' />
-  // <Chip label='.NET' />
-  // <Chip label='WinForms' />
 
   const imgScale = 0.65
   const imgWidth = 1280 * imgScale
