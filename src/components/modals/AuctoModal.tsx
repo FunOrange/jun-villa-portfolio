@@ -27,13 +27,30 @@ export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps)
     },
     {
       caption: 'A custom Table component I worked on',
-      imgSrc: '/osu-collector-desktop.mp4',
-      content: <>description</>,
+      imgSrc: '/aucto-table.jpg',
+      content: (
+        <>
+          To create this component, I used{' '}
+          <a href='https://ant.design/components/table/' target='_blank'>
+            Ant Design's Table component
+          </a>{' '}
+          as a base, which I then styled over using{' '}
+          <a href='https://styled-components.com/' target='_blank'>
+            styled components
+          </a>
+          . The table is feature rich and supports filtering on multiple fields, sorting, and pagination.
+        </>
+      ),
     },
     {
       caption: 'A custom Sidebar component I worked on',
-      imgSrc: '/osu-collector-payment.jpg',
-      content: <>description</>,
+      imgSrc: '/aucto-sidebar.mp4',
+      content: (
+        <>
+          Notice the smooth transitions when opening and closing the sidebar. I always try to make components polished
+          and presentable to the best of my ability.
+        </>
+      ),
     },
   ]
   const imgScale = 0.85
@@ -73,7 +90,7 @@ export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps)
             >
               {carouselItems.map(({ imgSrc }, i) =>
                 imgSrc.endsWith('.mp4') ? (
-                  <video autoPlay loop width={imgWidth} height={imgHeight}>
+                  <video autoPlay loop muted width={imgWidth} height={imgHeight}>
                     <source src={imgSrc} type='video/webm' />
                   </video>
                 ) : (
