@@ -11,46 +11,41 @@ import CardContent from '@mui/material/CardContent'
 import { useState } from 'react'
 import { styled } from '@mui/system'
 
-export interface AuctoModalProps extends Omit<TransitionModalProps, 'children'> {}
-export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps) {
+export interface AerliftModalProps extends Omit<TransitionModalProps, 'children'> {}
+export default function AerliftModal({ ...transitionModalProps }: AerliftModalProps) {
   const [carouselIndex, setCarouselIndex] = useState(0)
   const carouselItems = [
     {
-      caption: 'Asset management dashboard',
-      imgSrc: '/aucto-redeploy.jpg',
+      caption: 'SMS chatbot',
+      imgSrc: '/aerlift-sms.jpg',
       content: (
         <>
-          Here, companies can manage inventory of industrial assets. Managers can then funnel out unused assets into one
-          of several supported disposal methods: sell on marketplace, donate, etc.
-        </>
-      ),
-    },
-    {
-      caption: 'A custom Table component I worked on',
-      imgSrc: '/aucto-table.jpg',
-      content: (
-        <>
-          To create this component, I used{' '}
-          <a href='https://ant.design/components/table/' target='_blank'>
-            Ant Design's Table component
+          This SMS chatbot could take medical delivery requests from users. It was built with{' '}
+          <a href='https://www.twilio.com/' target='_blank'>
+            Twilio
           </a>{' '}
-          as a base, which I then styled over using{' '}
-          <a href='https://styled-components.com/' target='_blank'>
-            styled components
-          </a>
-          . The table is feature rich and supports filtering on multiple fields, sorting, and pagination.
+          and Node.js.
         </>
       ),
     },
     {
-      caption: 'A custom Sidebar component I worked on',
-      imgSrc: '/aucto-sidebar.mp4',
+      caption: 'Drone telemetry infrastructure',
+      imgSrc: '/aerlift-hardware.png',
       content: (
         <>
-          Notice the smooth transitions when opening and closing the sidebar. I always try to make components polished
-          and presentable to the best of my ability.
+          A combination of cloud software and drone hardware/firmware that could facilitate autonomous, remote operation
+          of a fleet of drones connected via 3G using a{' '}
+          <a href='https://docs.particle.io/boron/' target='_blank'>
+            Particle Boron
+          </a>
+          .
         </>
       ),
+    },
+    {
+      caption: 'Dashboard website',
+      imgSrc: '/aerlift-dashboard.png',
+      content: <>A dashboard website to control and oversee operations.</>,
     },
   ]
   const imgScale = 0.65
@@ -62,21 +57,26 @@ export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps)
         <Box display='flex' flexDirection='column' gap='14px' justifyContent='space-between' p={5}>
           <Box>
             <Typography component='h2' fontSize='26px' mb='-4px'>
-              Aucto
+              Aerlift
             </Typography>
             <Typography fontSize='16px' color='#888'>
-              2022 work experience
+              2021 work experience
             </Typography>
           </Box>
+          <Typography fontSize='17px'>
+            Aerlift is a startup whose goal is to have autonomous drones deliver medicine in developing countries like
+            Ghana. My capstone project at the University of Toronto was with Aerlift, and after I graduated from
+            Computer Engineering they took me in as a part-time employee.
+          </Typography>
           <Box>
             <Box display='flex' alignItems='center' gap='4px' mb='2px'>
-              <Button variant='contained' endIcon={<OpenInNew />} href='https://aucto.com' target='_blank'>
+              <Button variant='contained' endIcon={<OpenInNew />} href='https://aerlift.com' target='_blank'>
                 Website*
               </Button>
             </Box>
             <Typography fontSize='14px' color='#888'>
-              *Website link leads to company landing page, however the part of the website I worked on was an{' '}
-              <b>internal dashboard</b> used by businesses registered with Aucto.
+              *Website link leads to company landing page, however the dashboard I worked on is not publically
+              accessible.
             </Typography>
           </Box>
 
@@ -141,11 +141,12 @@ export default function AuctoModal({ ...transitionModalProps }: AuctoModalProps)
           </Typography>
 
           <Box display='flex' flexDirection='column' gap='24px' mr='14px'>
-            <Box>
-              <Typography justifySelf='center' fontSize='18px' mb='8px'>
-                Frontend
-              </Typography>
-              <Chip label='Next.js' />
+            <Box display='flex' flexDirection='column' alignItems='flex-start' gap='6px'>
+              <Chip label='Python (Flask)' />
+              <Chip label='Bootstrap' />
+              <Chip label='C++' />
+              <Chip label='Twilio' />
+              <Chip label='Node.js (App Engine)' />
             </Box>
           </Box>
         </Box>

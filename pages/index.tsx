@@ -11,6 +11,7 @@ import { useMediaQuery } from '@mui/material'
 import OsuCollectorModal from 'components/modals/OsuCollectorModal'
 import OsuTrainerModal from 'components/modals/OsuTrainerModal'
 import AuctoModal from 'components/modals/AuctoModal'
+import AerliftModal from 'components/modals/AerliftModal'
 
 enum Work {
   OsuCollector,
@@ -147,6 +148,7 @@ const Page: NextPage = () => {
       <OsuCollectorModal open={selectedWork === Work.OsuCollector} handleClose={() => setSelectedWork(undefined)} />
       <OsuTrainerModal open={selectedWork === Work.OsuTrainer} handleClose={() => setSelectedWork(undefined)} />
       <AuctoModal open={selectedWork === Work.Aucto} handleClose={() => setSelectedWork(undefined)} />
+      <AerliftModal open={selectedWork === Work.Aerlift} handleClose={() => setSelectedWork(undefined)} />
     </>
   )
 }
