@@ -16,6 +16,27 @@ export default function AerliftModal({ ...transitionModalProps }: AerliftModalPr
   const [carouselIndex, setCarouselIndex] = useState(0)
   const carouselItems = [
     {
+      caption: 'What is Aerlift?',
+      imgSrc: '/aerlift-video.mp4',
+      content: (
+        <>
+          Aerlift is a startup whose goal is to have autonomous drones deliver medicine in developing countries like
+          Ghana. My capstone project at the University of Toronto was with Aerlift, and after I graduated from Computer
+          Engineering they took me in as a part-time employee.
+        </>
+      ),
+    },
+    {
+      caption: 'Many responsibilities',
+      imgSrc: '/aerlift-video.mp4',
+      content: (
+        <>
+          At the company I was essentially the only one working on all the software projects; others were involved in
+          aerospace design, finances, etc. The following are a list of things they asked me to build (see next slide)
+        </>
+      ),
+    },
+    {
       caption: 'SMS chatbot',
       imgSrc: '/aerlift-sms.jpg',
       content: (
@@ -45,7 +66,13 @@ export default function AerliftModal({ ...transitionModalProps }: AerliftModalPr
     {
       caption: 'Dashboard website',
       imgSrc: '/aerlift-dashboard.png',
-      content: <>A dashboard website to control and oversee operations.</>,
+      content: (
+        <>
+          A dashboard website to control and oversee operations. Admins can view logs, see the statuses of all drones,
+          and override manual control of drones mid-flight by remoting into a Windows machine running Mission Planner
+          software, all while remaining in the browser (yes, I actually got this working).
+        </>
+      ),
     },
   ]
   const imgScale = 0.65
@@ -63,11 +90,6 @@ export default function AerliftModal({ ...transitionModalProps }: AerliftModalPr
               2021 work experience
             </Typography>
           </Box>
-          <Typography fontSize='17px'>
-            Aerlift is a startup whose goal is to have autonomous drones deliver medicine in developing countries like
-            Ghana. My capstone project at the University of Toronto was with Aerlift, and after I graduated from
-            Computer Engineering they took me in as a part-time employee.
-          </Typography>
           <Box>
             <Box display='flex' alignItems='center' gap='4px' mb='2px'>
               <Button variant='contained' endIcon={<OpenInNew />} href='https://aerlift.com' target='_blank'>
