@@ -20,7 +20,6 @@ enum Work {
   Aerlift,
   OsuPrinter,
   OsuKeypads,
-  Marvell,
 }
 
 const Page: NextPage = () => {
@@ -126,20 +125,6 @@ const Page: NextPage = () => {
             </Typography>
             <Typography fontSize='16px' color='#5383ca' flexGrow='1'>
               ・40 units sold
-            </Typography>
-          </ProjectCard>
-          <ProjectCard
-            boxProps={{ onClick: () => setSelectedWork(Work.Marvell) }}
-            title='Marvell'
-            subtitle='2019-2020 work experience'
-            imageSrc='/marvell.jpg'
-          >
-            <Typography fontSize='16px' color='#444' mb='5px'>
-              Digital verification engineer position
-            </Typography>
-            <Typography fontSize='16px' color='#5383ca' flexGrow='1'>
-              ・Python + perl scripting <br />
-              ・SystemVerilog
             </Typography>
           </ProjectCard>
         </S.Grid>
