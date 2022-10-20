@@ -13,6 +13,7 @@ import OsuTrainerModal from 'components/modals/OsuTrainerModal'
 import AuctoModal from 'components/modals/AuctoModal'
 import AerliftModal from 'components/modals/AerliftModal'
 import OsuPrinterModal from 'components/modals/OsuPrinterModal'
+import KeypadModal from 'components/modals/KeypadModal'
 
 enum Work {
   OsuCollector,
@@ -116,7 +117,7 @@ const Page: NextPage = () => {
           </ProjectCard>
           <ProjectCard
             boxProps={{ onClick: () => setSelectedWork(Work.OsuKeypads) }}
-            title='osu! keypads'
+            title='Two Button Keypads'
             subtitle='2019-2022 project'
             imageSrc='/keypads.jpg'
           >
@@ -136,6 +137,7 @@ const Page: NextPage = () => {
       <AuctoModal open={selectedWork === Work.Aucto} handleClose={() => setSelectedWork(undefined)} />
       <AerliftModal open={selectedWork === Work.Aerlift} handleClose={() => setSelectedWork(undefined)} />
       <OsuPrinterModal open={selectedWork === Work.OsuPrinter} handleClose={() => setSelectedWork(undefined)} />
+      <KeypadModal open={selectedWork === Work.OsuKeypads} handleClose={() => setSelectedWork(undefined)} />
     </>
   )
 }
